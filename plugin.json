@@ -112,6 +112,42 @@
       "field": "params.hide_credit",
       "label": "Hide footer credits",
       "type": "boolean"
+    },
+    {
+      "field": "params.social_twitter",
+      "label": "Twitter/X Username",
+      "type": "string",
+      "placeholder": "username (without @)"
+    },
+    {
+      "field": "params.social_mastodon",
+      "label": "Mastodon Handle",
+      "type": "string",
+      "placeholder": "@username@instance.social"
+    },
+    {
+      "field": "params.social_bluesky",
+      "label": "Bluesky Handle",
+      "type": "string",
+      "placeholder": "username.bsky.social"
+    },
+    {
+      "field": "params.social_threads",
+      "label": "Threads Username",
+      "type": "string",
+      "placeholder": "username (without @)"
+    },
+    {
+      "field": "params.social_instagram",
+      "label": "Instagram Username",
+      "type": "string",
+      "placeholder": "username (without @)"
+    },
+    {
+      "field": "params.social_github",
+      "label": "GitHub Username",
+      "type": "string",
+      "placeholder": "username (without @)"
     }
   ]
 }

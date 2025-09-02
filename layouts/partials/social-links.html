@@ -1,0 +1,43 @@
+{{- if or .Site.Params.social_twitter .Site.Params.social_mastodon .Site.Params.social_bluesky .Site.Params.social_threads .Site.Params.social_instagram .Site.Params.social_github -}}
+<div class="social">
+  {{- with .Site.Params.social_twitter -}}
+  <a href="https://twitter.com/{{ . }}" title="Follow on Twitter/X" aria-label="Follow on Twitter/X" rel="me">
+    <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+  </a>
+  {{- end -}}
+  
+  {{- with .Site.Params.social_mastodon -}}
+  {{- $parts := split . "@" -}}
+  {{- if eq (len $parts) 3 -}}
+  <a href="https://{{ index $parts 2 }}/@{{ index $parts 1 }}" title="Follow on Mastodon" aria-label="Follow on Mastodon" rel="me">
+    <i class="fa-brands fa-mastodon" aria-hidden="true"></i>
+  </a>
+  {{- end -}}
+  {{- end -}}
+  
+  {{- with .Site.Params.social_bluesky -}}
+  <a href="https://bsky.app/profile/{{ . }}" title="Follow on Bluesky" aria-label="Follow on Bluesky" rel="me">
+    <i class="fa-brands fa-bluesky" aria-hidden="true"></i>
+    <span class="bluesky-fallback" style="display: none;">🦋</span>
+  </a>
+  {{- end -}}
+  
+  {{- with .Site.Params.social_threads -}}
+  <a href="https://threads.net/@{{ . }}" title="Follow on Threads" aria-label="Follow on Threads" rel="me">
+    <i class="fa-brands fa-threads" aria-hidden="true"></i>
+  </a>
+  {{- end -}}
+  
+  {{- with .Site.Params.social_instagram -}}
+  <a href="https://instagram.com/{{ . }}" title="Follow on Instagram" aria-label="Follow on Instagram" rel="me">
+    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+  </a>
+  {{- end -}}
+  
+  {{- with .Site.Params.social_github -}}
+  <a href="https://github.com/{{ . }}" title="Follow on GitHub" aria-label="Follow on GitHub" rel="me">
+    <i class="fa-brands fa-github" aria-hidden="true"></i>
+  </a>
+  {{- end -}}
+</div>
+{{- end -}}

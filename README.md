@@ -87,6 +87,24 @@ The theme includes comprehensive configuration options available in the Micro.bl
 - **Search Results**: Customize number of search results (default: 5)
 - **RSS Footer Link**: Add RSS subscription link to footer
 - **Hide Credits**: Remove theme attribution from footer
+- **Social Media Icons**: Add Font Awesome icons for Twitter/X, Mastodon, Bluesky, Threads, Instagram, and GitHub
+
+## Social Media Integration
+
+The theme includes beautiful Font Awesome social media icons with Catppuccin-themed hover effects. Configure your social media profiles in the theme settings:
+
+- **Twitter/X**: Enter your username (without @)
+- **Mastodon**: Enter your full handle (@username@instance.social)
+- **Bluesky**: Enter your handle (username.bsky.social)
+- **Threads**: Enter your username (without @)
+- **Instagram**: Enter your username (without @)  
+- **GitHub**: Enter your username (without @)
+
+Icons will automatically appear in the footer when you configure the corresponding social media handles. Each icon includes:
+- Accessible hover states with brand-appropriate colors
+- Proper ARIA labels for screen readers
+- `rel="me"` attributes for identity verification
+- Smooth animations and focus indicators
 
 ## Accessibility Features
 
