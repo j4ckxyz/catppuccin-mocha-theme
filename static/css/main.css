@@ -190,17 +190,26 @@ body {
   color: var(--text);
 }
 
-/* Focus indicators for accessibility */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
+/* Focus indicators for accessibility - only visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
-/* Skip link for screen readers */
+/* Remove focus outlines for mouse/touch interactions */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Skip link for screen readers - hidden by default, only visible on focus */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -212,10 +221,14 @@ select:focus {
   border-radius: 4px;
   border: 2px solid var(--focus-ring);
   z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .skip-link:focus {
   top: 6px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Reduced motion for accessibility */
@@ -424,10 +437,15 @@ input[type="submit"]:active {
   transform: translateY(-1px);
 }
 
-input[type="button"]:focus,
-input[type="submit"]:focus {
+input[type="button"]:focus-visible,
+input[type="submit"]:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+input[type="button"]:focus:not(:focus-visible),
+input[type="submit"]:focus:not(:focus-visible) {
+  outline: none;
 }
 
 input[type="date"],
@@ -529,9 +547,13 @@ main {
   padding: 8px;
 }
 
-.hamburger:focus {
+.hamburger:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+.hamburger:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .bar {
@@ -1117,9 +1139,13 @@ img.bookshelf__cover {
     padding: 8px;
   }
 
-  .hamburger:focus {
+  .hamburger:focus-visible {
     outline: 2px solid var(--focus-ring);
     outline-offset: 2px;
+  }
+
+  .hamburger:focus:not(:focus-visible) {
+    outline: none;
   }
 
   .hamburger.active {
