@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "title": "Catppuccin Mocha",
-  "description": "A warm and cozy Micro.blog theme with Catppuccin Mocha colors.",
+  "description": "A warm and cozy Micro.blog theme using the beautiful Catppuccin Mocha color palette. Features a dark-first design with excellent accessibility and clean typography.",
   "fields": [
     {
       "field": "defaultContentLanguage",
@@ -14,6 +14,15 @@
       "label": "Fediverse creator",
       "type": "string",
       "placeholder": "@username@mastodon.instance"
+    },
+    {
+      "field": "params.catppuccin_flavor",
+      "label": "Catppuccin flavor",
+      "type": "select",
+      "options": [
+        {"label": "Mocha (Dark)", "value": "mocha"},
+        {"label": "Latte (Light)", "value": "latte"}
+      ]
     },
     {
       "field": "params.use_short_date",

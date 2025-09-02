@@ -3,7 +3,9 @@
     {{ partial "head.html" . }}
     <body>
         {{ partial "header.html" . }}
-        {{ block "main" . }}{{ end }}
+        <main id="main-content" role="main">
+            {{ block "main" . }}{{ end }}
+        </main>
         {{ partial "footer.html" . }}
         <script defer type="text/javascript" src="{{ "js/menu.js" | relURL }}"></script>
         <script defer type="text/javascript" src="{{ "js/scroll-to-top.js" | relURL }}"></script>

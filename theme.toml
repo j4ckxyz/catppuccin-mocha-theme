@@ -3,10 +3,10 @@
 
 name = "Catppuccin Mocha"
 license = "MIT"
-description = "A warm and cozy Micro.blog theme ported from the Catppuccin Mocha color palette"
-homepage = "https://github.com/catppuccin/catppuccin"
-tags = ["blog", "minimal", "dark", "catppuccin"]
-features = ["blog", "dark-theme"]
+description = "A beautiful, warm, and cozy Micro.blog theme using the Catppuccin Mocha color palette. Features dark-first design, excellent accessibility, and clean typography."
+homepage = "https://catppuccin.com/palette"
+tags = ["blog", "minimal", "dark", "catppuccin", "accessible", "responsive"]
+features = ["blog", "dark-theme", "responsive", "accessibility"]
 min_version = 0.20
 
 [author]
@@ -15,6 +15,6 @@ min_version = 0.20
 
 # If porting an existing theme
 [original]
-  name = "Catppuccin Mocha"
-  homepage = "https://catppuccin.com/palette/"
+  name = "Catppuccin"
+  homepage = "https://catppuccin.com/"
   repo = "https://github.com/catppuccin/catppuccin"

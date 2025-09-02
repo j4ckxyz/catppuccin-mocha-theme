@@ -1,0 +1,22 @@
+/* 
+ * Custom CSS for Catppuccin Mocha Theme
+ * Add your custom styles here to override the theme defaults
+ * This file is loaded after the main theme CSS
+ */
+
+/* Example: Uncomment to use a different accent color
+:root {
+  --ctp-mauve: #c6a0f6;  // Macchiato Mauve for variation
+  --link: var(--ctp-mauve);
+}
+*/
+
+/* Example: Uncomment to customize font sizes
+body {
+  // font-size: 1.9rem;
+}
+
+h1 {
+  // font-size: 2.6rem;
+}
+*/

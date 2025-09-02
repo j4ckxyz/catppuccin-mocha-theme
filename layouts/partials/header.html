@@ -1,24 +1,25 @@
-<header class="header">
-    <nav class="site-nav">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="header" role="banner">
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
         {{- if .Site.Params.hide_avatar }}
-        <h1 class="site-title"><a href="/">{{ .Site.Title }}</a></h1>
+        <h1 class="site-title"><a href="/" aria-label="Home - {{ .Site.Title }}">{{ .Site.Title }}</a></h1>
         {{- else }}
         {{- $avatar := .Site.Params.custom_avatar }}
-        <h1 class="site-title"><a href="/"><img id="avatar" class="u-photo" src="{{ if $avatar }}{{ $avatar }}{{ else }}{{ .Site.Author.avatar }}{{ end }}" width="36" height="36" />{{ .Site.Title }}</a></h1>
+        <h1 class="site-title"><a href="/" aria-label="Home - {{ .Site.Title }}"><img id="avatar" class="u-photo" src="{{ if $avatar }}{{ $avatar }}{{ else }}{{ .Site.Author.avatar }}{{ end }}" width="36" height="36" alt="{{ .Site.Author.name }}'s avatar" />{{ .Site.Title }}</a></h1>
         {{- end }}
-        <ul class="nav-menu">
+        <ul class="nav-menu" role="menubar">
         {{- range .Site.Menus.main }}
             {{- if .Page.Params.redirect_url }}
-            <li class="nav-item"><a href="{{ .Page.Params.redirect_url }}">{{ .Name | safeHTML }}</a></li>
+            <li class="nav-item" role="none"><a href="{{ .Page.Params.redirect_url }}" role="menuitem">{{ .Name | safeHTML }}</a></li>
             {{- else }}
-            <li class="nav-item"><a href="{{ .URL | relLangURL | safeURL }}">{{ .Name | safeHTML }}</a></li>
+            <li class="nav-item" role="none"><a href="{{ .URL | relLangURL | safeURL }}" role="menuitem">{{ .Name | safeHTML }}</a></li>
             {{- end }}
         {{- end }}
         </ul>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+        </button>
     </nav>
 </header>
