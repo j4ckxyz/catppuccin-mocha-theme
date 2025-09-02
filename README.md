@@ -52,53 +52,120 @@ This theme uses the complete Catppuccin Mocha color palette for a cohesive, warm
 1. In your Micro.blog admin panel, go to **Design → Themes**
 2. Click **Install Theme** and upload this theme
 3. Select "Catppuccin Mocha" from your available themes
-4. Configure theme options in **Design → Theme Settings**
+4. Go to **Design → Edit Custom Themes** and select your theme
+5. Edit the `config.json` file to customize your theme settings (see Configuration section below)
 
 ### Manual Installation
 
 1. Copy the theme folder to your Hugo `themes` directory
 2. Add `theme = "catppuccin-mocha"` to your `config.toml`
-3. Restart your Hugo development server
+3. Copy and customize the provided `config.json` settings
+4. Restart your Hugo development server
 
 ## Configuration Options
 
-The theme includes comprehensive configuration options available in the Micro.blog theme settings:
+The theme includes comprehensive configuration options available in the `config.json` file. 
+
+### How to Edit Configuration
+
+**For Micro.blog users:**
+1. Go to **Design → Edit Custom Themes**
+2. Select your Catppuccin Mocha theme
+3. Click on `config.json` to edit
+4. Modify the values under the `"params"` section
+5. Save your changes
+
+**For Hugo users:**
+1. Open the `config.json` file in your theme directory
+2. Modify the values under the `"params"` section
+3. Restart your Hugo server
 
 ### Basic Settings
-- **Site Language**: Set your preferred language code
-- **Fediverse Creator**: Link to your Mastodon/Fediverse account
-- **Date Format**: Choose between short and full date formats
-- **Header Style**: Normal or narrow header layout
-- **Avatar Settings**: Show/hide or use custom avatar
+```json
+{
+  "params": {
+    "fediverse_creator": "@username@mastodon.social",
+    "use_short_date": false,
+    "narrow_header": false,
+    "hide_avatar": false,
+    "custom_avatar": "https://example.com/avatar.jpg"
+  }
+}
+```
 
 ### Content Display
-- **Home Categories**: Filter posts by category on homepage
-- **Full Posts**: Show complete posts vs. summaries on homepage
-- **Read Time**: Display estimated reading time for titled posts
-- **Categories on Archives**: Show category filters on archive pages
+```json
+{
+  "params": {
+    "home_category": "blog,updates",
+    "show_full_post": false,
+    "show_read_time": true,
+    "category_full_post": false,
+    "show_categories": true
+  }
+}
+```
 
 ### Photo Gallery
-- **Photos Category**: Set a specific category for photo galleries
-- **Layout Style**: Choose between grid and masonry layouts
-- **Full Width**: Enable wider photo gallery layout
-- **Image Formats**: Support all image formats or just standard ones
+```json
+{
+  "params": {
+    "photos_category": "photos",
+    "masonry_layout": true,
+    "full_width_photos": true,
+    "single_image": false,
+    "all_formats": true
+  }
+}
+```
 
-### Advanced Features
-- **Search Results**: Customize number of search results (default: 5)
-- **RSS Footer Link**: Add RSS subscription link to footer
-- **Hide Credits**: Remove theme attribution from footer
-- **Social Media Icons**: Add Font Awesome icons for Twitter/X, Mastodon, Bluesky, Threads, Instagram, and GitHub
+### Social Media Links
+```json
+{
+  "params": {
+    "social_twitter": "yourusername",
+    "social_mastodon": "@you@mastodon.social",
+    "social_bluesky": "you.bsky.social",
+    "social_threads": "yourusername",
+    "social_instagram": "yourusername",
+    "social_github": "yourusername"
+  }
+}
+```
+
+### Advanced Options
+```json
+{
+  "params": {
+    "search_results": "10",
+    "footer_rss": true,
+    "hide_credit": false,
+    "catppuccin_flavor": "mocha"
+  }
+}
+```
 
 ## Social Media Integration
 
-The theme includes beautiful Font Awesome social media icons with Catppuccin-themed hover effects. Configure your social media profiles in the theme settings:
+The theme includes beautiful Font Awesome social media icons with Catppuccin-themed hover effects. Configure your social media profiles in the `config.json` file:
 
-- **Twitter/X**: Enter your username (without @)
-- **Mastodon**: Enter your full handle (@username@instance.social)
-- **Bluesky**: Enter your handle (username.bsky.social)
-- **Threads**: Enter your username (without @)
-- **Instagram**: Enter your username (without @)  
-- **GitHub**: Enter your username (without @)
+```json
+{
+  "params": {
+    "social_twitter": "yourusername",
+    "social_mastodon": "@you@mastodon.social", 
+    "social_bluesky": "you.bsky.social",
+    "social_threads": "yourusername",
+    "social_instagram": "yourusername",
+    "social_github": "yourusername"
+  }
+}
+```
+
+**Important Notes:**
+- **Twitter/X, Threads, Instagram, GitHub**: Enter just your username (without @)
+- **Mastodon**: Enter your full handle including @ and instance (@username@instance.social)
+- **Bluesky**: Enter your full handle (username.bsky.social)
 
 Icons will automatically appear in the footer when you configure the corresponding social media handles. Each icon includes:
 - Accessible hover states with brand-appropriate colors

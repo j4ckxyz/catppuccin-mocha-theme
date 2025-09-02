@@ -1,0 +1,114 @@
+{
+    "title": "[TITLE]",
+    "author": {
+        "name": "[FULL_NAME]",
+        "avatar": "[AVATAR_URL]",
+        "username": "[USERNAME]",
+        "activitypub": {
+            "username": "[ACTIVITYPUB_USERNAME]",
+        }
+    },
+    "baseURL": "[SCHEME]://[HOSTNAME]/",
+    "defaultContentLanguage": "en",
+    "mediaTypes": {
+        "application/json": {
+            "suffixes": ["json"]
+        }
+    },
+    "outputFormats": {
+        "RSS": {
+            "baseName": "feed"
+        },
+        "JSON": {
+            "baseName": "feed"
+        },
+        "RSD": {
+            "mediaType": "application/xml",
+            "baseName": "rsd",
+            "isPlainText": true,
+            "notAlternative": true
+        },
+        "ArchiveJSON": {
+            "mediaType": "application/json",
+            "path": "archive",
+            "baseName": "index",
+            "isPlainText": true,
+            "notAlternative": true
+        },
+        "PhotosJSON": {
+            "mediaType": "application/json",
+            "path": "photos",
+            "baseName": "index",
+            "isPlainText": true,
+            "notAlternative": true
+        },
+        "PodcastXML": {
+            "mediaType": "application/rss+xml",
+            "baseName": "podcast",
+            "isPlainText": true,
+            "notAlternative": true
+        },
+        "PodcastJSON": {
+            "mediaType": "application/json",
+            "baseName": "podcast",
+            "isPlainText": true,
+            "notAlternative": true
+        }
+    },
+    "outputs": {
+        "home": ["HTML", "RSS", "JSON"],
+        "page": ["HTML"],
+        "section": ["HTML", "RSS", "ArchiveJSON", "PhotosJSON", "PodcastXML", "PodcastJSON"]
+    },
+    "params": {
+        "_comment": "=== CATPPUCCIN MOCHA THEME CONFIGURATION ===",
+        "_comment_general": "--- General Settings ---",
+        "fediverse_creator": "",
+        "use_short_date": false,
+        "narrow_header": false,
+        "hide_avatar": false,
+        "custom_avatar": "",
+        
+        "_comment_content": "--- Content Display ---",
+        "home_category": "",
+        "show_full_post": false,
+        "show_read_time": false,
+        "category_full_post": false,
+        "show_categories": false,
+        
+        "_comment_photos": "--- Photo Gallery Settings ---",
+        "photos_category": "",
+        "all_formats": false,
+        "masonry_layout": false,
+        "full_width_photos": false,
+        "single_image": false,
+        
+        "_comment_search": "--- Search Configuration ---",
+        "search_results": "5",
+        
+        "_comment_footer": "--- Footer Options ---",
+        "footer_rss": false,
+        "hide_credit": false,
+        
+        "_comment_social": "--- Social Media Links (Font Awesome Icons) ---",
+        "_social_instructions": "Enter usernames without @ symbol (except for Mastodon which needs full @username@instance.social format)",
+        "social_twitter": "",
+        "social_mastodon": "",
+        "social_bluesky": "",
+        "social_threads": "",
+        "social_instagram": "",
+        "social_github": "",
+        
+        "_comment_advanced": "--- Advanced Settings ---",
+        "catppuccin_flavor": "mocha",
+        "plugins_js": [],
+        "plugins_css": [],
+        "plugins_html": []
+    },
+    "markup": {
+        "highlight": {
+            "style": "dracula",
+            "lineNos": false
+        }
+    }
+}
